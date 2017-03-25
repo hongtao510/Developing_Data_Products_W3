@@ -1,0 +1,35 @@
+---
+title: "Week 3 Project"
+author: "TH"
+date: "March 25, 2017"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## House Listing Price
+
+Create a plot using R library plotly which shows:
+
+- average house listing price
+- over US States
+- data source is from trulia (https://www.trulia.com/home_prices/)
+
+## Plots
+
+```{r, echo = FALSE, warning=FALSE, message=FALSE}
+setwd('D:/Dropbox/E-books/_Coursera/9_Developing_Data_Products/Week3')
+housing_df <- read.csv('house_listing_price.csv', header = TRUE, stringsAsFactors = FALSE)
+library(plotly)
+plot_ly(x = as.factor(housing_df$States), 
+	    y=housing_df$Average.Listing.Price, 
+	    type = "bar",
+	    name="US House Average Listing Price")
+
+
+```
+
+```
+
